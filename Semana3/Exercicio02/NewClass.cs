@@ -36,6 +36,21 @@ internal class DaysOfWeek
             list[i] = list[i].Substring(0, 3);
             Console.WriteLine(list[i]);
         }
-        
+
+        Dictionary<int, string> dictionary = new Dictionary<int, string>();
+        dictionary[0] = "Monday";
+        dictionary[1] = "Tuesday";
+        dictionary[2] = "Wednesday";
+        dictionary[3] = "Thursday";
+        dictionary[4] = "Friday";
+        dictionary[5] = "Saturday";
+        //dictionary[6]("Sunday");
+        dictionary.Add(6, "Sunday");
+
+        for (int i=0; i < dictionary.Count; i++)
+        {
+            dictionary[i] = dictionary[i].Substring(0, 3);
+            Console.WriteLine(dictionary[i]);
+        }
     }
 }
