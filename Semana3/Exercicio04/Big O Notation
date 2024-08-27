@@ -1,0 +1,5 @@
+É uma forma de manusear de forma eficiente em menos tempo os algoritimos na questão de tempo de execução e da memoria de acordo com que o tamanho da entrada aumenta.
+Big-O tem um foco em ignorar as constantes e termos de menor ordem. Tem diversas classes de dificuldade, como por exemplo: O(1), O(n), O(log n) e O(n^2);
+ele da alguns exemplos praticos para ajudar a entender a eficiencia ao utilizar o software dessa forma.
+
+
