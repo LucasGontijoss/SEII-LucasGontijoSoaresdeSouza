@@ -1,0 +1,21 @@
+1) 
+Limite de Bytes por Pacote em TCP e UDP
+Em ambos os protocolos, TCP e UDP, o tamanho máximo de um pacote é definido pelo protocolo IP, com um limite teórico de 65.535 bytes, incluindo os cabeçalhos. Contudo, esse valor real costuma ser menor devido às restrições impostas pelas redes e pelos cabeçalhos dos protocolos:
+TCP (Transmission Control Protocol): permite um payload máximo de aproximadamente 65.495 bytes, considerando os 20 bytes do cabeçalho IP e os 20 bytes típicos do cabeçalho TCP. No entanto, o TCP fragmenta os dados em segmentos menores baseados no MSS (Maximum Segment Size) para facilitar a transmissão confiável e eficiente. Em redes Ethernet, o MSS é geralmente próximo de 1460 bytes.
+
+UDP (User Datagram Protocol): oferece um limite de payload de até 65.507 bytes, descontando os 20 bytes do cabeçalho IP e 8 bytes do cabeçalho UDP. Diferentemente do TCP, o UDP não controla a fragmentação, então a camada de aplicação precisa garantir que os pacotes estejam dentro dos limites.
+
+2)
+Transmissão de Arquivos Grandes pela Internet e Diferenças entre TCP e UDP
+Para enviar arquivos grandes pela internet, eles são divididos em partes menores que podem ser gerenciadas pela rede.
+TCP:
+
+O TCP fragmenta o arquivo em segmentos numerados sequencialmente, garantindo a reconstrução ordenada e completa do arquivo no destino.
+Este protocolo é confiável, pois assegura que todos os pacotes cheguem na ordem correta e reenvia pacotes quando há perdas.
+Ele também regula o fluxo e ajusta a transmissão de acordo com a capacidade da rede.
+Por essas verificações de erro e retransmissão, o TCP é ideal para transferências de arquivos onde a integridade dos dados é crucial, como downloads, uploads e envio de e-mails.
+UDP:
+
+O UDP envia pacotes sem controlar a ordem ou confirmação de recebimento. Garantir a entrega e ordenação depende do protocolo ou da aplicação em uso.
+Ele é mais rápido que o TCP, mas menos confiável, pois não realiza retransmissões nem garante a ordem dos pacotes. Em caso de perda de pacotes, o UDP não tenta recuperar dados automaticamente.
+Sua leveza e velocidade o tornam ideal para aplicações onde a velocidade é prioritária e pequenas perdas são aceitáveis, como streaming de áudio e vídeo ao vivo, chamadas VoIP e jogos online.
